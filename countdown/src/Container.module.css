@@ -1,0 +1,36 @@
+.container{
+    
+    margin-bottom: 20px;
+    font-weight: 900;
+    font-size: xx-large;
+    color: #E8E8E8FF;
+
+}
+
+.flex{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+    justify-content: center;
+  align-items: center;
+}
+
+.time{
+    padding: 12px;
+    font-size: large;
+    color: white;
+    background: transparent;
+    border-radius: 5px;
+    border: 2px solid white;
+    margin-bottom: 20px;
+}
+.btn{
+    box-sizing: border-box;
+    font-size: medium;
+    padding: 6px;
+    color: white;
+    background: transparent;
+    border-radius: 5px;
+    border: 2px solid white;
+    cursor: pointer;
+}

@@ -1,0 +1,21 @@
+.con{
+    border-radius: 12px;
+    min-width: 150px;
+    padding: 32px 0px ;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to right top, #EE0FFFFF, #0FE0FF);
+    box-shadow: 12px;
+    
+}
+
+.num{
+    font-size: 40px;
+    font-weight: 700;
+    color: white;
+}
+.unit{
+    font-size: 30px;
+    font-weight: 500;
+    color: #A6B1E1;
+}
