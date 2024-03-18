@@ -7,7 +7,15 @@ function Container({setFlag,setDay,setHour,setMinute,setSecond,setQuote}){
     const [selectedDate, setSelectedDate] = useState('');
     const [btn,setBtn] = useState(true);
     const tracker = useRef(null);
-    const [timer,setTimer] = useState(3);
+    const [timer,setTimer] = useState(null);
+
+    useEffect(()=>{
+        if(localStorage.getItem("date")){
+        setSelectedDate(localStorage.getItem("date"));}
+            setTimer(localStorage.getItem("hour"));
+    },[]);
+
+    
 
     useEffect(()=>{
 
@@ -16,9 +24,10 @@ function Container({setFlag,setDay,setHour,setMinute,setSecond,setQuote}){
             if(selectedDate){
             setFlag(0);
             setQuote(1);
+            setBtn(true);
             playsound()}
         }else{
-
+            localStorage.setItem("hour",timer);
             let ts = parseInt(Math.floor(timer/1000));
             let min = parseInt(Math.floor(ts/60));
             let hour = parseInt(Math.floor(min/60));
@@ -147,19 +156,20 @@ function Container({setFlag,setDay,setHour,setMinute,setSecond,setQuote}){
         
         var ts = (days*24*60*60*1000)+ (hours*60*60*1000) + (minutes*60*1000) + (seconds*1000);
         setTimer(ts);
+        localStorage.setItem("hour",ts);
        
     }
 
 
   const handleDateChange = (event) => {
     setSelectedDate(event.target.value);
-    
+    localStorage.setItem("date",event.target.value);
     
     const target = getTargetDate(event.target.value);
     const current = getCurrentDate();
 
     if(validateTime(target,current)===-1){
-        console.log("l");
+      
         setFlag(0);
         setQuote(2);
     }
