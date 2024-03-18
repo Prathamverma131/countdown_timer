@@ -121,7 +121,7 @@ function Container({setFlag,setDay,setHour,setMinute,setSecond,setQuote}){
             }  
         }
 
-        if(a-b>=1&&a-b<=100){
+        if(a-b>=1&&a-b<100){
             
             return true;
         }
